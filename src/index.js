@@ -93,7 +93,7 @@ async function loadMoreImg() {
 
       if (currentPage * 40 >= res.data.totalHits) {
          loadMore.style.display = "none";
-         Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+         Notiflix.Notify.info("We are sorry, but you've reached the end of search results.");
       } else {
         loadMore.style.display = "block";
       }
