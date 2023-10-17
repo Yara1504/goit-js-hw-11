@@ -32,7 +32,11 @@ async function searchImage(event) {
             const photoCard = createPhotoCard(image);
             gallery.appendChild(photoCard);
          });
+      if (data.length <= 39) {
+         loadMore.style.display = "none";
+         } else {
          loadMore.style.display = "block";
+         }
       }
    } catch (error) {
       console.log(error);
@@ -90,8 +94,6 @@ async function loadMoreImg() {
       if (currentPage * 40 >= res.data.totalHits) {
          loadMore.style.display = "none";
          Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
-      } else if (data.length < 40) {
-        loadMore.style.display = "none";
       } else {
         loadMore.style.display = "block";
       }
